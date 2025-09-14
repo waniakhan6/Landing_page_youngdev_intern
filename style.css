@@ -1,0 +1,299 @@
+/* ================= General Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= Body Themes ================= */
+body {
+  background: #fff;
+  color: #333;
+  transition: 0.4s ease;
+}
+body.dark {
+  background: #0f0f0f;
+  color: #f1f1f1;
+}
+
+/* ================= Header ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.mode-toggle {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* ================= Hero Section ================= */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: #fff;
+  animation: fadeIn 1.2s ease;
+}
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+/* Gradient text hero */
+.hero-title span {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.cta {
+  background: #fff;
+  color: #0077ff;
+  font-size: 1rem;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #fff;
+}
+
+/* ================= About / Features ================= */
+.about {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.about h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.feature-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+body.dark .feature-card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= Testimonials ================= */
+.testimonials {
+  background: #f9f9f9;
+  color: #222;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.testimonials h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0077ff;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+.carousel .card {
+  flex: 0 0 calc(33.333% - 1rem);
+  margin: 0;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+.carousel .card::before {
+  content: "\201C";
+  font-size: 3rem;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #0077ff;
+  opacity: 0.2;
+}
+.carousel .card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.carousel .card p::after {
+  content: " ⭐⭐⭐⭐⭐";
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: gold;
+}
+.carousel-buttons {
+  margin-top: 15px;
+}
+.carousel-buttons button {
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.carousel-buttons button:hover {
+  background: #005fcc;
+}
+body.dark .testimonials {
+  background: #121212;
+  color: #eee;
+}
+body.dark .card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+}
+
+/* ================= Contact ================= */
+.contact {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  gap: 1rem;
+}
+.contact input,
+.contact textarea {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 8px #0077ff;
+}
+.contact button {
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.contact button:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= Footer ================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: #fff;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .carousel .card {
+    flex: 0 0 80%;
+  }
+}
